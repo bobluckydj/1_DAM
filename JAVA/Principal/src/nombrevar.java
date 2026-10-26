@@ -8,6 +8,7 @@ import java.util.Scanner;
             double deseadapor;
             double nota2;
             double n2por;
+            double notareal;
             System.out.println("Introduce tu primera nota: ");
             nota1 = sc.nextDouble();
             while (nota1 > 10 || nota1 < 0) {
@@ -19,8 +20,8 @@ import java.util.Scanner;
             notadeseada = sc.nextDouble();
             while (notadeseada > 10 || notadeseada < 0) {
                 System.out.println("Porfavor introduzca una nota entre 0 y 10");
-                System.out.println("Introduce tu primera nota: ");
-                nota1 = sc.nextDouble();
+                System.out.println("Introduce la media que deseas obtener: ");
+                notadeseada = sc.nextDouble();
             }
 
 
@@ -28,8 +29,10 @@ import java.util.Scanner;
             deseadapor = (notadeseada * 100) / 10;
             n2por = deseadapor - n1por;
             nota2 = (n2por * 10) / 60;
+            notareal = (((nota1 * 40)/ 10) + 60) / 10;
             if (nota2 > 10) {
-                System.out.println("Te sera imposible alcanzar esta nota: " + String.format("%.2f", nota2));
+                System.out.println("Te sera imposible alcanzar un " + String.format("%.2f", nota2) + " en el segundo examen");
+                System.out.println("Pero si obtienes un 10, podras tener un: " + String.format("%.2f", notareal) + " de media");
                 System.out.println("Mas suerte el proximo trimestre");
             } else {
                 System.out.println("Para sacar " + notadeseada + " en el trimestre, necesitas un " + String.format("%.2f", nota2) + " en el segundo examen");
